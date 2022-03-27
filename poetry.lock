@@ -142,11 +142,11 @@ python-versions = "*"
 
 [[package]]
 name = "jinja2"
-version = "3.0.3"
+version = "3.1.1"
 description = "A very fast and expressive template engine."
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.dependencies]
 MarkupSafe = ">=2.0"
@@ -320,17 +320,24 @@ name = "xonsh"
 version = "0.11.0"
 description = "Python-powered, cross-platform, Unix-gazing shell"
 category = "main"
-optional = false
-python-versions = ">=3.6"
+optional = true
+python-versions = ">=3.7"
+develop = false
 
 [package.extras]
-full = ["prompt-toolkit (>=3)", "pyperclip", "pygments (>=2.2)", "gnureadline", "distro", "setproctitle"]
+full = ["prompt-toolkit (>=3.0.27)", "pyperclip", "pygments (>=2.2)", "gnureadline", "distro", "setproctitle"]
 linux = ["distro"]
 mac = ["gnureadline"]
 proctitle = ["setproctitle"]
-ptk = ["prompt-toolkit (>=3.0)", "pyperclip"]
+ptk = ["prompt-toolkit (>=3.0.27)", "pyperclip"]
 pygments = ["pygments (>=2.2)"]
 zipapp = ["importlib-resources"]
+
+[package.source]
+type = "git"
+url = "https://github.com/xonsh/xonsh/"
+reference = "main"
+resolved_reference = "d004784621f7a36d31700e24cac623cf0bd3a78d"
 
 [[package]]
 name = "zict"
@@ -343,10 +350,13 @@ python-versions = "*"
 [package.dependencies]
 heapdict = "*"
 
+[extras]
+xonsh = ["xonsh"]
+
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8"
-content-hash = "6f956609533e33b45a976698f639f31493295359c19ad1349a863ba96b2d3f82"
+content-hash = "cd9f537699a30f54a1a6b3e39c147a899cf7f8d0a99129618854edea23306726"
 
 [metadata.files]
 atomicwrites = [
@@ -390,8 +400,8 @@ iniconfig = [
     {file = "iniconfig-1.1.1.tar.gz", hash = "sha256:bc3af051d7d14b2ee5ef9969666def0cd1a000e121eaea580d4a313df4b37f32"},
 ]
 jinja2 = [
-    {file = "Jinja2-3.0.3-py3-none-any.whl", hash = "sha256:077ce6014f7b40d03b47d1f1ca4b0fc8328a692bd284016f806ed0eaca390ad8"},
-    {file = "Jinja2-3.0.3.tar.gz", hash = "sha256:611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7"},
+    {file = "Jinja2-3.1.1-py3-none-any.whl", hash = "sha256:539835f51a74a69f41b848a9645dbdc35b4f20a3b601e2d9a7e22947b15ff119"},
+    {file = "Jinja2-3.1.1.tar.gz", hash = "sha256:640bed4bb501cbd17194b3cace1dc2126f5b619cf068a726b98192a0fde74ae9"},
 ]
 locket = [
     {file = "locket-0.2.1-py2.py3-none-any.whl", hash = "sha256:12b6ada59d1f50710bca9704dbadd3f447dbf8dac6664575c1281cadab8e6449"},
@@ -627,9 +637,7 @@ tornado = [
     {file = "tornado-6.1-cp39-cp39-win_amd64.whl", hash = "sha256:548430be2740e327b3fe0201abe471f314741efcb0067ec4f2d7dcfb4825f3e4"},
     {file = "tornado-6.1.tar.gz", hash = "sha256:33c6e81d7bd55b468d2e793517c909b139960b6c790a60b7991b9b6b76fb9791"},
 ]
-xonsh = [
-    {file = "xonsh-0.11.0.tar.gz", hash = "sha256:0d9c3d9a4e8b8199ae697fbc9d1e0ae55085cdbdd4306d04813350996f9c15dc"},
-]
+xonsh = []
 zict = [
     {file = "zict-2.1.0-py3-none-any.whl", hash = "sha256:3b7cf8ba91fb81fbe525e5aeb37e71cded215c99e44335eec86fea2e3c43ef41"},
     {file = "zict-2.1.0.tar.gz", hash = "sha256:15b2cc15f95a476fbe0623fd8f771e1e771310bf7a01f95412a0b605b6e47510"},
