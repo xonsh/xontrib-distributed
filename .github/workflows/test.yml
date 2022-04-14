@@ -28,6 +28,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
           enable-pep582: true # Enable PEP 582 package loading globally
       - name: Install dependencies
-        run: pdm install
+        run: |
+          python --version
+          pdm run python --version
+          pdm install
       - name: Run tests
         run: pdm run pytest
