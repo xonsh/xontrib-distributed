@@ -61,3 +61,8 @@ Documentation = "https://github.com/xonsh/xontrib-distributed/blob/master/README
 Code = "https://github.com/xonsh/xontrib-distributed"
 "Issue tracker" = "https://github.com/xonsh/xontrib-distributed/issues"
 repository = "https://github.com/xonsh/xontrib-distributed"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
