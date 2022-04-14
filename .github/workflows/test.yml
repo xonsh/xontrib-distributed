@@ -6,4 +6,4 @@ on:
 
 jobs:
   testing:
-    uses: xonsh/actions/.github/workflows/test-poetry-xontrib.yml
+    uses: xonsh/actions/.github/workflows/test-poetry-xontrib.yml@main
