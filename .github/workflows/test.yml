@@ -22,8 +22,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-      - name: Install poetry
-        run: pipx install poetry
       - name: Set up Python ${{ matrix.python-version }}
         uses: pdm-project/setup-pdm@main
         with:
@@ -32,4 +30,4 @@ jobs:
       - name: Install dependencies
         run: pdm install
       - name: Run tests
-        run: pytest
+        run: pdm run pytest
