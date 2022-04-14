@@ -1,49 +1,10 @@
-[tool.poetry]
-name = "xontrib-distributed"
-version = "0.0.4"
-description = "The distributed parallel computing library hooks for xonsh"
-authors = ["Xonsh Dev <jnoortheen@gmail.com>"]
-
-license = "MIT"
-readme = "README.md"
-
-repository = "https://github.com/xonsh/xontrib-distributed"
-keywords = ['xontrib', 'xonsh']
-classifiers = [
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
-    "Natural Language :: English",
-    "Operating System :: OS Independent",
-    "Topic :: System :: Shells",
-    "Topic :: System :: System Shells",
-    "Topic :: Terminals",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-]
-
-
-packages = [{ include = "xontrib" }]
-
-[tool.poetry.urls]
-Documentation = "https://github.com/xonsh/xontrib-distributed/blob/master/README.md"
-Code = "https://github.com/xonsh/xontrib-distributed"
-"Issue tracker" = "https://github.com/xonsh/xontrib-distributed/issues"
-
-
-[tool.poetry.dependencies]
-python = ">=3.8"
-distributed = ">=2022.3.0"
-xonsh = ">=0.12"
-
-[tool.poetry.dev-dependencies]
-pytest = ">=7.0"
-
+[tool.pdm]
+includes = ["xontrib"]
+[tool.pdm.dev-dependencies]
+dev = ["pytest>=7.0"]
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["pdm-pep517"]
+build-backend = "pdm.pep517.api"
 
 [tool.isort]
 profile = "black"
@@ -66,3 +27,37 @@ force-exclude = '''
   | disk-cache.sqlite3
 )/
 '''
+
+
+[project]
+# PEP 621 project metadata
+# See https://www.python.org/dev/peps/pep-0621/
+authors = [{ name = "Xonsh Dev", email = "jnoortheen@gmail.com" }]
+license-expression = "MIT"
+requires-python = ">=3.8"
+dependencies = ["distributed>=2022.3.0", "xonsh>=0.12"]
+name = "xontrib-distributed"
+version = "0.0.4"
+description = "The distributed parallel computing library hooks for xonsh"
+readme = "README.md"
+keywords = ["xontrib", "xonsh"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Topic :: System :: Shells",
+    "Topic :: System :: System Shells",
+    "Topic :: Terminals",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+]
+
+[project.urls]
+Documentation = "https://github.com/xonsh/xontrib-distributed/blob/master/README.md"
+Code = "https://github.com/xonsh/xontrib-distributed"
+"Issue tracker" = "https://github.com/xonsh/xontrib-distributed/issues"
+repository = "https://github.com/xonsh/xontrib-distributed"

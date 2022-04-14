@@ -6,6 +6,30 @@ on:
 
 jobs:
   testing:
-    uses: xonsh/actions/.github/workflows/test-poetry-xontrib.yml@main
-    with:
-      xontrib_name: distributed
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        python-version:
+          - "3.7"
+          - "3.8"
+          - "3.9"
+          - "3.10"
+          - "3.11-dev"
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install poetry
+        run: pipx install poetry
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: pdm-project/setup-pdm@main
+        with:
+          python-version: ${{ matrix.python-version }}
+          enable-pep582: true # Enable PEP 582 package loading globally
+      - name: Install dependencies
+        run: poetry install
+      - name: Run tests
+        run: pytest
