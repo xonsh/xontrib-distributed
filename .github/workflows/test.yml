@@ -7,3 +7,5 @@ on:
 jobs:
   testing:
     uses: xonsh/actions/.github/workflows/test-poetry-xontrib.yml@main
+    with:
+      xontrib_name: distributed
