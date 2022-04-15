@@ -32,7 +32,7 @@ force-exclude = '''
 # See https://www.python.org/dev/peps/pep-0621/
 authors = [{ name = "Xonsh Dev", email = "jnoortheen@gmail.com" }]
 license-expression = "MIT"
-requires-python = ">=3.8"
+requires-python = ">=3.7"
 dependencies = ["distributed", "xonsh>=0.12"]
 name = "xontrib-distributed"
 version = "0.0.4"
