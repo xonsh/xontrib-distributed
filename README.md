@@ -1,4 +1,4 @@
-<p align="center">  
+<p align="center">
 The <a href="https://pypi.org/project/distributed/">distributed</a> parallel computing library hooks for xonsh
 <br><br>
 If you like the idea click ⭐ on the repo and <a href="https://twitter.com/intent/tweet?text=Nice%20xontrib%20for%20the%20xonsh%20shell!&url=https://github.com/xonsh/xontrib-distributed" target="_blank">tweet</a>.
