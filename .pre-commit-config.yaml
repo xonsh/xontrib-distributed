@@ -42,13 +42,13 @@ repos:
         ]
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.38.0
+    rev: v2.38.2
     hooks:
       - id: pyupgrade
         args:
           - "--py37-plus"
   - repo: https://github.com/compilerla/conventional-pre-commit
-    rev: v2.0.0
+    rev: v2.1.1
     hooks:
       - id: conventional-pre-commit
         stages: [commit-msg]
